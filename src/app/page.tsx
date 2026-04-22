@@ -1,4 +1,5 @@
-"use client";
+// Mobile APK Build Trigger v1.0.1
+"use client";\n
 
 import Link from "next/link";
 import Image from "next/image";
