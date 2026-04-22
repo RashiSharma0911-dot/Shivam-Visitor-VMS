@@ -31,10 +31,10 @@ jobs:
       - name: Build Next.js Static Site
         run: |
           # Move API folder completely OUT of src/app to prevent Next.js from scanning it
-          if [ -d "src/app/api" ]; then mv src/app/api ./api_backup; fi
+          if [ -d "src/app/api" ]; then mv src/app/api ./api_routes_backup; fi
           npm run build
           # Restore the folder after build
-          if [ -d "./api_backup" ]; then mv ./api_backup src/app/api; fi
+          if [ -d "./api_routes_backup" ]; then mv ./api_routes_backup src/app/api; fi
 
       - name: Sync with Capacitor
         run: npx cap sync android
