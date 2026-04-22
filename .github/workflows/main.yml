@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -30,11 +30,11 @@ jobs:
 
       - name: Build Next.js Static Site
         run: |
-          # Temporarily move API folder if it exists
-          if [ -d "src/app/api" ]; then mv src/app/api src/app/_api_temp; fi
+          # Move API folder completely OUT of src/app to prevent Next.js from scanning it
+          if [ -d "src/app/api" ]; then mv src/app/api ./api_backup; fi
           npm run build
-          # Move it back for code integrity
-          if [ -d "src/app/_api_temp" ]; then mv src/app/_api_temp src/app/api; fi
+          # Restore the folder after build
+          if [ -d "./api_backup" ]; then mv ./api_backup src/app/api; fi
 
       - name: Sync with Capacitor
         run: npx cap sync android
