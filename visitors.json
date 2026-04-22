@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Prateek Yadav",
+    "company": "Google",
+    "type": "Client",
+    "person": "MD",
+    "status": "Approved",
+    "date": "2026-04-21",
+    "time": "10:45 AM"
+  },
+  {
+    "id": 2,
+    "name": "Anjali Gupta",
+    "company": "Freelance",
+    "type": "Interview",
+    "person": "HR Manager",
+    "status": "Rejected",
+    "date": "2026-04-21",
+    "time": "11:10 AM"
+  }
+]

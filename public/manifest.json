@@ -1,0 +1,21 @@
+{
+  "name": "Shivam Visitor App",
+  "short_name": "Shivam VMS",
+  "description": "Enterprise Visitor Management System for Shivam Informatics",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0099D5",
+  "icons": [
+    {
+      "src": "https://www.shivaminformatics.com/public/Front/img/ShivamLogo3%20(2).png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://www.shivaminformatics.com/public/Front/img/ShivamLogo3%20(2).png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "visitor-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "static-build": "powershell -Command \"if (Test-Path src/app/api) { Move-Item src/app/api src/app/_api_temp }; next build; if (Test-Path src/app/_api_temp) { Move-Item src/app/_api_temp src/app/api }\" && npx cap sync",
+    "start": "next start",
+    "lint": "eslint",
+    "mobile:sync": "npx cap sync",
+    "mobile:run": "npx cap open android"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.0",
+    "chart.js": "^4.5.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.8.0",
+    "next": "16.2.4",
+    "next-pwa": "^5.6.0",
+    "qrcode.react": "^4.2.0",
+    "react": "19.2.4",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "19.2.4",
+    "react-dropzone": "^15.0.0",
+    "react-webcam": "^7.2.0",
+    "tailwind-merge": "^3.5.0",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.3.1",
+    "@capacitor/cli": "^8.3.1",
+    "@capacitor/core": "^8.3.1",
+    "@capacitor/ios": "^8.3.1",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

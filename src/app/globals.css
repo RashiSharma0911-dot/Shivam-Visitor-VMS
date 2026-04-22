@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #008cdb;
+  
+  --shivam-blue: #008cdb;
+  --shivam-light-blue: #06a4be;
+  --shivam-orange: #F26522;
+  --shivam-navy: #0A2540;
+  --shivam-gold: #F9C74F;
+  
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 140, 219, 0.2);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-shivam-blue: var(--shivam-blue);
+  --color-shivam-light-blue: var(--shivam-light-blue);
+  --color-shivam-orange: var(--shivam-orange);
+  --color-shivam-navy: var(--shivam-navy);
+  --color-shivam-gold: var(--shivam-gold);
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Keeping it light as per user request "light theme rkho dark nhi" */
+    --background: #f8fafc;
+    --foreground: #008cdb;
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(0, 140, 219, 0.2);
+  }
+}
+
+body {
+  background-color: #f8fafc;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.shivam-gradient {
+  background: linear-gradient(135deg, var(--shivam-navy) 0%, var(--shivam-blue) 100%);
+}
+
+.shivam-text-gradient {
+  background: linear-gradient(135deg, var(--shivam-blue) 0%, var(--shivam-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
