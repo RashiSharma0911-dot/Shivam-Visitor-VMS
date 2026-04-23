@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "static-build": "powershell -Command \"if (Test-Path src/app/api) { Move-Item src/app/api src/app/_api_temp }; next build; if (Test-Path src/app/_api_temp) { Move-Item src/app/_api_temp src/app/api }\" && npx cap sync",
+    "static-build": "next build && npx cap sync",
     "start": "next start",
     "lint": "eslint",
     "mobile:sync": "npx cap sync",
